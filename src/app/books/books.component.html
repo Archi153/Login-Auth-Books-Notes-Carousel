@@ -1,0 +1,10 @@
+<h1 class="books">Ваши любимые книги</h1>
+<button mat-raised-button color='primary' (click)="addBook()" class="addbook_btn">Добавить книгу</button>
+<button mat-raised-button color='primary' (click)="addBooks()" class="addbook_btn">Add Books</button>
+<button mat-raised-button color='primary' (click)="deleteBooks()" class="addbook_btn">Delete Books</button>
+<div *ngFor="let book of books" class="title_book">
+  {{ book.author}}: {{ book.name }}
+  <button mat-icon-button (click)="editBook(book)">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>

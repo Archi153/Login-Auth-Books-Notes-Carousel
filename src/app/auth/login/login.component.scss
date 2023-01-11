@@ -1,0 +1,30 @@
+@use '../../../scss/theme/colors.scss';
+@use '../../../scss/theme/typography.scss';
+:host {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.container,
+form
+{
+  
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+.mat-mdc-button[disabled][disabled]{
+  color: var(--md-sys-color-on-secondary-container)!important;
+}
+.mat-mdc-button:not(:disabled){
+  color: var(--md-sys-color-on-secondary-container)!important;
+}
+

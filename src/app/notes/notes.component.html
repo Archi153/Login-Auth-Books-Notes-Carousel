@@ -1,0 +1,10 @@
+
+<button mat-icon-button (click)="addNote()" class="nt"> <p>Заметки <mat-icon>add_notes</mat-icon></p></button>
+<!-- <div class="container"> -->
+<div class = "content">
+
+  <button mat-raised-button color='primary' *ngFor="let note of NoteService.getList() | async" (click)="editNote(note)" class="addbook_btn">
+    {{ note.author | author1 }}
+  </button>
+</div>
+<!-- </div> -->

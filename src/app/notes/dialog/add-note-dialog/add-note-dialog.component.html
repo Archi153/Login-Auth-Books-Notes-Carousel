@@ -1,0 +1,22 @@
+<div class="dialog">
+  <div class="note_btns">
+    <button mat-button (click)="onCancelClick()" class="dialog_btn_first">X</button>
+    <button mat-button (click)="onAddClick()" [disabled]="noteForm.invalid" class="dialog_btn_second">{{buttonMessege}}</button>
+  </div>
+  <h1 mat-dialog-title class="notes">{{titleMessege}} Заметки</h1> 
+  <div mat-dialog-content>
+      <form [formGroup]="noteForm" class="tbs">
+          <div formGroupName="author" class="author">
+            <mat-form-field >
+              <mat-label>Название</mat-label>
+              <textarea matInput type="text" formControlName="lastName" class="inpt"></textarea>
+            </mat-form-field>
+          </div>
+          <mat-form-field class="input" >
+            <mat-label>Ваша заметка</mat-label>
+            <textarea matInput type="text" formControlName="name" class="inpt_2"></textarea>
+          </mat-form-field>
+        </form>
+  </div>
+
+</div>

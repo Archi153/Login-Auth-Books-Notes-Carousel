@@ -1,0 +1,28 @@
+@use '../../../../scss/theme/colors';
+@use '../../../../scss/theme/typography';
+
+
+form,mat-form-field,.inpt_2{
+    width: 450px;
+}
+mat-form-field.input{
+   height: 250px;
+    
+}
+.inpt{
+    display: block;
+}
+h1{
+    text-align: center;
+    margin: 0 0 32px;
+    color: colors.on-primary-container() !important;
+}
+.dialog_btn_first{
+    min-width: 32px;
+}
+.note_btns{
+    padding-top: 12px;
+    margin-inline: 12px; ;
+    display: flex;
+    justify-content: space-between;
+}

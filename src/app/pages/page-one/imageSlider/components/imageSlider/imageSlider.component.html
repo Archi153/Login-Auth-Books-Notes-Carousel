@@ -1,0 +1,22 @@
+<div class="slider">
+  <p>Выбор редакции</p>
+  <div>
+    <div (click)="goToPrevious()" class="leftArrow"><mat-icon>chevron_left</mat-icon></div>
+    <div (click)="goToNext()" class="rightArrow"><mat-icon>chevron_right</mat-icon></div>
+  </div>
+  <div
+    class="slide"
+    [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+  >
+
+  </div>
+  <div class="dotsContainer">
+    <div
+      *ngFor="let slide of slides; let slideIndex = index"
+      class="dot"
+      (click)="goToSlide(slideIndex)"
+    >
+      ●
+    </div>
+  </div>
+  </div>
