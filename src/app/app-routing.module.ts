@@ -5,6 +5,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import { RouterModule, Routes } from '@angular/router';
 import {PageOneComponent} from "./pages/page-one/page-one.component";
 import {PageTwoComponent} from "./pages/page-two/page-two.component";
+import {RegisterComponent} from "./auth/register/register.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'auth/login',
     component: LoginComponent,
+    canActivate: [NotAuthGuard]
+  },
+  {
+    path: 'auth/register',
+    component: RegisterComponent,
     canActivate: [NotAuthGuard]
   },
   {

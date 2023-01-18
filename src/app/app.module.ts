@@ -16,6 +16,7 @@ import {MatInputModule} from "@angular/material/input";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {JwtInterceptor} from "./interceptors/jwt.interceptor";
 import { PageOneModule } from './pages/page-one/page-one.module';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { PageOneModule } from './pages/page-one/page-one.module';
     AppComponent,
     PageTwoComponent,
     LoginComponent,
+    RegisterComponent,
 
   
   ],

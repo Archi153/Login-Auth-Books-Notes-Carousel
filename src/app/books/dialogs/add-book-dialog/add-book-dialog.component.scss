@@ -35,3 +35,19 @@ h1.books{
 .inpt{
     background-color: colors.on-surface-variant();
 }
+.mat-mdc-dialog-surface {
+    background: colors.surface() !important;
+  
+    h1 {
+        @include typography.headline-small();
+        color: colors.on-surface();
+    }
+  
+    .mat-mdc-dialog-actions {
+        .mat-mdc-button {
+            background: colors.surface() !important;
+            color: colors.on-surface() !important;
+        }
+    }
+
+}

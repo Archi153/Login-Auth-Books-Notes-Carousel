@@ -1,5 +1,125 @@
+@use '../../../scss/theme/theme';
+@use '../../../scss/theme/colors';
+@use '../../../scss/theme/tokens';
+@use '../../../scss/theme/typography';
+
+
+
+h1, h2, h3,p{
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.hero-section{
+    margin-top: 50px;
+    width: max-content;
+    margin-inline: auto;
+    .container{
+
+        .title{
+            display: flex;
+            gap: 50px;
+            .header{
+                h1{
+                    font-weight: 500;
+                    color:colors.primary()
+                }
+            }
+            .light{
+                display: flex;
+                flex-direction: column  ;
+                margin-bottom: 50px;
+
+            }
+        }
+    }
+}
+
+.info{
+    margin-left: auto;
+    margin-right: 150px;
+    background-color: colors.on-tertiary();
+    max-width:400px ;
+    border-radius: 25px;
+    padding: 15px 0 0 25px ;
+    min-height: max-content;
+    min-width:fit-content ;
+    min-height: 115px;
+    margin-top: 15px;
+    .container{
+
+        display: flex;
+        flex-direction: column;
+
+        .about{
+            max-width: 350px;
+
+        }
+    }
+}
+.favorite_books{
+    margin-left: 150px;
+    margin-right: auto;
+    background-color: colors.primary();
+    max-width:400px ;
+    border-radius: 25px;
+    padding: 15px 0 0 25px ;
+    min-width:max-content ;
+    min-height: 115px;
+    margin-top: 15px;
+    .container{
+        
+        display: flex;
+        flex-direction: column;
+
+        .about{
+            max-width: 350px;
+            color: colors.on-tertiary()
+        }
+        h2{
+           color: colors.on-tertiary()
+        }
+    }
+}
+
+
 .carousel{
+    margin-top: 50px !important;
     max-width: 800px; 
     height: 400px; 
     margin: 0 auto;
+}
+@media screen and (max-width:750px) {
+    .title{
+        flex-direction: column;
+        gap: 10px !important;
+    }
+}
+@media screen and (max-width:655px){
+    .info{
+        margin: 0;
+        margin-top: 20px;
+        margin-inline: auto;
+    }
+    .favorite_books{
+        margin: 0px;
+        margin-top: 20px;
+        margin-inline: auto;
+    }
+}
+@media (prefers-color-scheme:light){
+    .favorite_books{
+        .container{
+            h2{
+                color:colors.on-primary()
+            }
+            .about{
+                color:colors.on-primary()
+            }
+        }
+    }
 }
