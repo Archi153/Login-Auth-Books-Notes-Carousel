@@ -1,6 +1,15 @@
 @use '../../../../scss/theme/colors';
 @use '../../../../scss/theme/typography';
+.mat-mdc-dialog-title {
+    @include typography.title-large;
+    color: colors.on-surface();
+}
 
+.mat-mdc-dialog-actions {
+    justify-content: end;
+    padding-inline: 24px;
+    padding-bottom: 20px;
+}
 .action{
     display: flex;
 }

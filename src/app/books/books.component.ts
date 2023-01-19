@@ -22,12 +22,16 @@ export class BooksComponent implements OnInit {
 
   public books: IBook[] = [];
 
-  public addBook() {
-    const dialogRef = this.dialog.open(AddBookDialogComponent);
+  public createBook() {
+    const dialogRef = this.dialog.open(AddBookDialogComponent, {
+      data: undefined,
+    });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(result => {  
       if (result) {
-        this.bookService.addBook(result).subscribe();
+        this.bookService.createBook(result).subscribe(_ => {
+          this.loadBooks();
+        });
       }
     });
   }
@@ -49,17 +53,17 @@ export class BooksComponent implements OnInit {
       this.books = result;
     })
   } 
-
   public editBook(book: IBook) {
     const dialogRef = this.dialog.open(AddBookDialogComponent, {
-      data: book,
+      data: {author: book.author, name: book.name}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(result => {  
       if (result) {
-        this.bookService.editBook(result).subscribe();
+        this.bookService.updateBook(book.id, result).subscribe(_ => {
+          this.loadBooks();
+        });
       }
     });
   }
 }
-

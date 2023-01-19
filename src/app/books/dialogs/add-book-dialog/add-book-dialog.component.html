@@ -1,29 +1,25 @@
-<div class="dialog">
-  <div class="action">
-    <button mat-button (click)="onCancelClick()" class="dialog_btn_first">X</button>
-    <h1 mat-dialog-title class="books">{{titleMessege}} книг</h1> 
-    <button mat-button (click)="onAddClick()" [disabled]="bookForm.invalid" class="dialog_btn_second">{{buttonMessege}}</button>
-  </div>
-  <div mat-dialog-content>
-    <form [formGroup]="bookForm" class="tbs">
-      <div formGroupName="author" class="author">
-        <mat-form-field>
-          <mat-label>Имя автора</mat-label>
-          <input matInput type="text" formControlName="firstName" class="inpt">
-        </mat-form-field>
-        <mat-form-field >
-          <mat-label>Фамилия автора</mat-label>
-          <input matInput type="text" formControlName="lastName" class="inpt">
-        </mat-form-field>
-      </div>
-      <mat-form-field >
-        <mat-label>Название</mat-label>
-        <input matInput type="text" formControlName="name" class="inpt">
-      </mat-form-field>
-    </form>
-  </div>
+
+
+<h1 mat-dialog-title>{{ action }} книгу</h1>
+
+<div mat-dialog-content>
+  
+  <form [formGroup]="bookForm">
+
+    <mat-form-field>
+      <mat-label>Автор</mat-label>
+      <input matInput type="text" formControlName="author">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Название</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+  </form> 
+
 </div>
 
-
-  
-
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()" class="button-cancel">Отмена</button>
+  <button mat-flat-button (click)="onAddClick()" [disabled]="bookForm.invalid" class="button-confirm">{{ action }}</button>
+</div>
