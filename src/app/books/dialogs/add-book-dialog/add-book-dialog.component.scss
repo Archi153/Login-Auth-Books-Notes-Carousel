@@ -13,9 +13,15 @@
 .action{
     display: flex;
 }
-.mat-mdc-dialog-container .mdc-dialog__content{
+form{
     display: flex;
     flex-direction: column;
+    min-width: 350px;
+}
+.mat-mdc-dialog-content.mdc-dialog__content{
+    display: flex;
+    flex-direction: column;
+
 }
 .tbs{
     display: flex;
